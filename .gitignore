@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+ENV/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Output files (keep examples, ignore generated)
+*.log
+*.out
+!build.log
+
+# Personal notes
+notes.md
+TODO.md
+*.bak
+
+# Generated data (keep examples)
+# Uncomment if you want to ignore sample data files
+# *.json
+# !**/compliance/*.json

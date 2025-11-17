@@ -1,0 +1,71 @@
+{
+  "metadata": {
+    "source": "sample",
+    "generated_at": "2025-11-17T09:47:00.320985",
+    "total_tickets": 4
+  },
+  "metrics": {
+    "total_tickets": 4,
+    "resolved_count": 2,
+    "open_count": 2,
+    "resolution_rate": 0.5,
+    "avg_resolution_time_days": 3.5,
+    "by_priority": {
+      "Major": 1,
+      "Critical": 1,
+      "High": 1,
+      "Medium": 1
+    },
+    "by_component": {
+      "Compliance": 1,
+      "Telemetry": 1,
+      "Build System": 2
+    }
+  },
+  "tickets": [
+    {
+      "key": "BD-1290",
+      "summary": "Compliance Issues in rdkb/devices/test/hal",
+      "status": "Resolved",
+      "created": "2025-10-28T09:47:00.316773",
+      "resolved": "2025-11-02T09:47:00.316782",
+      "resolution_time_days": 5,
+      "priority": "Major",
+      "assignee": "Sundar Subramanian",
+      "component": "Compliance"
+    },
+    {
+      "key": "RDK-456",
+      "summary": "Memory leak in telemetry collector",
+      "status": "In Progress",
+      "created": "2025-11-07T09:47:00.316784",
+      "resolved": null,
+      "resolution_time_days": null,
+      "priority": "Critical",
+      "assignee": "Developer1",
+      "component": "Telemetry"
+    },
+    {
+      "key": "RDK-457",
+      "summary": "Build failures on main branch",
+      "status": "Open",
+      "created": "2025-11-12T09:47:00.316785",
+      "resolved": null,
+      "resolution_time_days": null,
+      "priority": "High",
+      "assignee": "Developer2",
+      "component": "Build System"
+    },
+    {
+      "key": "RDK-458",
+      "summary": "Add caching to build system",
+      "status": "Resolved",
+      "created": "2025-11-09T09:47:00.316787",
+      "resolved": "2025-11-11T09:47:00.316788",
+      "resolution_time_days": 2,
+      "priority": "Medium",
+      "assignee": "Developer2",
+      "component": "Build System"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+[BD-1290] Compliance Issues in rdkb/devices/test/hal Created: 18/Mar/25  Updated: 29/Aug/25  Resolved: 29/Aug/25
+Status:
+Resolved
+Project:
+Black Duck
+Component/s:
+None
+Affects Version/s:
+None
+Fix Version/s:
+None
+ 
+Type:
+Bug
+Priority:
+Major
+Reporter:
+Martin Hughes
+Assignee:
+Sundar Subramanian
+Resolution:
+Fixed
+ 
+Labels:
+None
+Remaining Estimate:
+Not Specified
+Time Spent:
+Not Specified
+Original Estimate:
+Not Specified
+ 
+Belated ticket for this repo and change 109246
+Here is a quick summary:
+• All files to have Apache headers. We use Apache for contributions, not BSD.
+• The usual LICENSE/NOTICE/COPYING/CONTRIBUTING should be present. I would prefer just the Apache-license as we use it, not the extra header text.
+• NOTICE should be for QK with credits for anyone else as two-liners (Cisco, RDK)
+• Two code matches, both OK but please mod file wifi_hal.c:72 to omit the line numbers as it becomes very specific and impossible to maintain. i.e. "Adapted from ieee80211…." is sufficient.
+• NOTICE will then need a two liner "Copyright 2003-2005 Sam Leffler…/Licensed under the BSD-3 License". Add a copy of the BSD-3 License to the end of LICENSE. (Use YEAR and COPYRIGHT HOLDER not exact name and year, so this is useful if there are other BSD-3 bits in the future.)
+Comment by Martin Hughes [ 21/Aug/25 ]
+Checked rdkb-2024q3-kirkstone-ipq_13.0 – OK
+rdkb-2024q1-dunfell is missing some license changes (LICENSE/NOTICE)
+Recheck: hal-qcawifi/source/hal-qcawifi/wifi_hal.c in the rdkb-2024q1-dunfell branch doesn't have the offending code so this is not a problem after all.
+Resolving the ticket.
+Comment by Martin Hughes [ 25/Jun/25 ]
+Rescanned as 117157.  Generally 15-May-25 findings are OK but:
+Please add a second credit in wifi_hal.c before 18773 (callback_dump):
+ 
+Adapted from iw which is:
+Copyright (c) 2007, 2008 Johannes Berg
+Copyright (c) 2007 Andy Lutomirski
+Copyright (c) 2007 Mike Kershaw
+Copyright (c) 2008-2009 Luis R. Rodriguez
+ 
+Licensed under the ISC License
+Please add this to NOTICE:
+ 
+Code from iw is:
+Copyright (c) 2007, 2008 Johannes Berg
+Copyright (c) 2007 Andy Lutomirski
+Copyright (c) 2007 Mike Kershaw
+Copyright (c) 2008-2009 Luis R. Rodriguez
+ 
+Licensed under the ISC License
+And append a generic ISC license to LICENSE
+Comment by Martin Hughes [ 21/May/25 ]
+Scanned on 15-May (rdkb-2024q1-dunfell, 4a1f967880aaa068862e49deb2161bbc60e293ce)
+• NOTICE is not quite the RDK standard. Is it possible to use the standard version used throughout RDK? In particular, to replace line 2 with:
+"The component is licensed to you under the Apache License, Version 2.0 (the "License")."
+• LICENSE in RDK repos conventionally contains license texts only. Can lines 1-3 be removed?
+• Please merge https://code.rdkcentral.com/r/c/rdkb/devices/hal/+/114667
+Comment by Sundar Subramanian [ 13/Mar/25 ]
+Martin Hughes 
+For this repo, is this the complete report that they have address for open sourcing it?
+I still see some files missing and I asked them to check and update
+If you are expecting a detailed scan please do so
+ 
+Thanks

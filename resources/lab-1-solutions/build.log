@@ -1,0 +1,172 @@
+[2024-08-15 14:23:12] Starting build for RDK component: telemetry
+[2024-08-15 14:23:12] Build ID: rdkb-2024q3-kirkstone-ipq_13.0
+[2024-08-15 14:23:12] CMake version: 3.24.0
+[2024-08-15 14:23:12] Compiler: GCC 11.3.0
+[2024-08-15 14:23:12] Build type: Release
+[2024-08-15 14:23:12] ========================================
+
+[2024-08-15 14:23:13] Running CMake configuration...
+[2024-08-15 14:23:13] -- The C compiler identification is GNU 11.3.0
+[2024-08-15 14:23:13] -- The CXX compiler identification is GNU 11.3.0
+[2024-08-15 14:23:13] -- Detecting C compiler ABI info
+[2024-08-15 14:23:13] -- Detecting C compiler ABI info - done
+[2024-08-15 14:23:13] -- Check for working C compiler: /usr/bin/gcc
+[2024-08-15 14:23:13] -- Check for working C compiler: /usr/bin/gcc -- works
+[2024-08-15 14:23:13] -- Detecting C compile features
+[2024-08-15 14:23:13] -- Detecting C compile features - done
+[2024-08-15 14:23:13] -- Detecting CXX compiler ABI info
+[2024-08-15 14:23:13] -- Detecting CXX compiler ABI info - done
+[2024-08-15 14:23:13] -- Check for working CXX compiler: /usr/bin/g++
+[2024-08-15 14:23:13] -- Check for working CXX compiler: /usr/bin/g++ -- works
+[2024-08-15 14:23:13] -- Detecting CXX compile features
+[2024-08-15 14:23:13] -- Detecting CXX compile features - done
+[2024-08-15 14:23:14] -- Found PkgConfig: /usr/bin/pkg-config (found version "0.29.2")
+[2024-08-15 14:23:14] -- Looking for pthread.h
+[2024-08-15 14:23:14] -- Looking for pthread.h - found
+[2024-08-15 14:23:14] -- Performing Test HAVE_PTHREAD_PRIO_INHERIT
+[2024-08-15 14:23:14] -- Performing Test HAVE_PTHREAD_PRIO_INHERIT - Success
+[2024-08-15 14:23:14] -- Found Threads: TRUE
+[2024-08-15 14:23:15] -- Configuring done
+[2024-08-15 14:23:15] -- Generating done
+[2024-08-15 14:23:15] -- Build files have been written to: /build/rdk/telemetry/build
+[2024-08-15 14:23:15] CMake configuration completed successfully
+
+[2024-08-15 14:23:16] Starting compilation...
+[2024-08-15 14:23:16] Scanning dependencies of target telemetry_common
+[2024-08-15 14:23:16] [  2%] Building C object src/common/CMakeFiles/telemetry_common.dir/utils.c.o
+[2024-08-15 14:23:17] [  4%] Building C object src/common/CMakeFiles/telemetry_common.dir/logger.c.o
+[2024-08-15 14:23:17] [  6%] Building C object src/common/CMakeFiles/telemetry_common.dir/config.c.o
+[2024-08-15 14:23:18] [  8%] Building C object src/common/CMakeFiles/telemetry_common.dir/memory.c.o
+[2024-08-15 14:23:18] [ 10%] Linking C static library libtelemetry_common.a
+[2024-08-15 14:23:18] [ 10%] Built target telemetry_common
+
+[2024-08-15 14:23:19] Scanning dependencies of target telemetry_collector
+[2024-08-15 14:23:19] [ 12%] Building C object src/collector/CMakeFiles/telemetry_collector.dir/collector.c.o
+[2024-08-15 14:23:20] In file included from /build/rdk/telemetry/src/collector/collector.c:15:
+[2024-08-15 14:23:20] /build/rdk/telemetry/src/collector/collector.h:42:5: error: unknown type name 'telemetry_config_t'
+[2024-08-15 14:23:20]    42 |     telemetry_config_t* config;
+[2024-08-15 14:23:20]        |     ^~~~~~~~~~~~~~~~~~
+[2024-08-15 14:23:20] /build/rdk/telemetry/src/collector/collector.c:78:15: error: 'TELEMETRY_MAX_SAMPLES' undeclared (first use in this function)
+[2024-08-15 14:23:20]    78 |     if (count > TELEMETRY_MAX_SAMPLES) {
+[2024-08-15 14:23:20]                ^~~~~~~~~~~~~~~~~~~~~
+[2024-08-15 14:23:20] /build/rdk/telemetry/src/collector/collector.c:78:15: note: each undeclared identifier is reported only once for each function it appears in
+[2024-08-15 14:23:20] /build/rdk/telemetry/src/collector/collector.c:125:34: error: too few arguments to function 'telemetry_log_error'
+[2024-08-15 14:23:20]   125 |         telemetry_log_error("Failed to allocate memory");
+[2024-08-15 14:23:20]       |                                  ^
+[2024-08-15 14:23:20] /build/rdk/telemetry/src/common/logger.h:28:6: note: declared here
+[2024-08-15 14:23:20]   28 | void telemetry_log_error(const char* module, const char* message);
+[2024-08-15 14:23:20]       |      ^~~~~~~~~~~~~~~~~~~
+[2024-08-15 14:23:20] make[2]: *** [src/collector/CMakeFiles/telemetry_collector.dir/build.make:63: src/collector/CMakeFiles/telemetry_collector.dir/collector.c.o] Error 1
+[2024-08-15 14:23:20] make[1]: *** [CMakeFiles/Makefile2:185: src/collector/CMakeFiles/telemetry_collector.dir/all] Error 2
+[2024-08-15 14:23:20] make: *** [Makefile:91: all] Error 2
+[2024-08-15 14:23:20] ERROR: Compilation failed for telemetry_collector
+
+[2024-08-15 14:23:21] Attempting to continue with other targets...
+[2024-08-15 14:23:21] Scanning dependencies of target telemetry_processor
+[2024-08-15 14:23:21] [ 14%] Building C object src/processor/CMakeFiles/telemetry_processor.dir/processor.c.o
+[2024-08-15 14:23:22] [ 16%] Building C object src/processor/CMakeFiles/telemetry_processor.dir/filter.c.o
+[2024-08-15 14:23:22] [ 18%] Building C object src/processor/CMakeFiles/telemetry_processor.dir/aggregator.c.o
+[2024-08-15 14:23:23] [ 20%] Linking C static library libtelemetry_processor.a
+[2024-08-15 14:23:23] [ 20%] Built target telemetry_processor
+
+[2024-08-15 14:23:24] Scanning dependencies of target telemetry_api
+[2024-08-15 14:23:24] [ 22%] Building C object src/api/CMakeFiles/telemetry_api.dir/api.c.o
+[2024-08-15 14:23:25] [ 24%] Building C object src/api/CMakeFiles/telemetry_api.dir/handlers.c.o
+[2024-08-15 14:23:25] [ 26%] Building C object src/api/CMakeFiles/telemetry_api.dir/endpoints.c.o
+[2024-08-15 14:23:26] [ 28%] Linking C shared library libtelemetry_api.so
+[2024-08-15 14:23:26] /usr/bin/ld: cannot find -ljson-c
+[2024-08-15 14:23:26] /usr/bin/ld: cannot find -ljson-c
+[2024-08-15 14:23:26] collect2: error: ld returned 1 exit status
+[2024-08-15 14:23:26] make[2]: *** [src/api/CMakeFiles/telemetry_api.dir/build.make:112: src/api/libtelemetry_api.so] Error 1
+[2024-08-15 14:23:26] make[1]: *** [CMakeFiles/Makefile2:245: src/api/CMakeFiles/telemetry_api.dir/all] Error 2
+[2024-08-15 14:23:26] ERROR: Linking failed for telemetry_api - missing library: json-c
+
+[2024-08-15 14:23:27] Scanning dependencies of target telemetry_tests
+[2024-08-15 14:23:27] [ 30%] Building C object tests/CMakeFiles/telemetry_tests.dir/test_collector.c.o
+[2024-08-15 14:23:28] [ 32%] Building C object tests/CMakeFiles/telemetry_tests.dir/test_processor.c.o
+[2024-08-15 14:23:28] [ 34%] Building C object tests/CMakeFiles/telemetry_tests.dir/test_api.c.o
+[2024-08-15 14:23:29] [ 36%] Building C object tests/CMakeFiles/telemetry_tests.dir/test_utils.c.o
+[2024-08-15 14:23:29] [ 38%] Linking C executable telemetry_tests
+[2024-08-15 14:23:29] /usr/bin/ld: src/collector/libtelemetry_collector.a(collector.c.o): in function `collector_init':
+[2024-08-15 14:23:29] /build/rdk/telemetry/src/collector/collector.c:45: undefined reference to `telemetry_config_load'
+[2024-08-15 14:23:29] /usr/bin/ld: src/collector/libtelemetry_collector.a(collector.c.o): in function `collector_start':
+[2024-08-15 14:23:29] /build/rdk/telemetry/src/collector/collector.c:78: undefined reference to `telemetry_malloc'
+[2024-08-15 14:23:29] /usr/bin/ld: src/collector/libtelemetry_collector.a(collector.c.o): in function `collector_stop':
+[2024-08-15 14:23:29] /build/rdk/telemetry/src/collector/collector.c:125: undefined reference to `telemetry_free'
+[2024-08-15 14:23:29] collect2: error: ld returned 1 exit status
+[2024-08-15 14:23:29] make[2]: *** [tests/CMakeFiles/telemetry_tests.dir/build.make:98: tests/telemetry_tests] Error 1
+[2024-08-15 14:23:29] make[1]: *** [CMakeFiles/Makefile2:312: tests/CMakeFiles/telemetry_tests.dir/all] Error 2
+[2024-08-15 14:23:29] ERROR: Linking failed for telemetry_tests - undefined references
+
+[2024-08-15 14:23:30] Scanning dependencies of target telemetry_main
+[2024-08-15 14:23:30] [ 40%] Building C object src/main/CMakeFiles/telemetry_main.dir/main.c.o
+[2024-08-15 14:23:31] In file included from /build/rdk/telemetry/src/main/main.c:12:
+[2024-08-15 14:23:31] /build/rdk/telemetry/src/main/main.c:45:12: warning: implicit declaration of function 'getopt_long' [-Wimplicit-function-declaration]
+[2024-08-15 14:23:31]   45 |     int opt = getopt_long(argc, argv, "c:dvh", long_options, NULL);
+[2024-08-15 14:23:31]       |            ^~~~~~~~~~~~
+[2024-08-15 14:23:31] /build/rdk/telemetry/src/main/main.c:45:12: note: include '<getopt.h>' or provide a declaration
+[2024-08-23 14:23:31] /build/rdk/telemetry/src/main/main.c:67:23: error: 'TELEMETRY_DEFAULT_CONFIG_PATH' undeclared (first use in this function)
+[2024-08-15 14:23:31]   67 |     strcpy(config_path, TELEMETRY_DEFAULT_CONFIG_PATH);
+[2024-08-15 14:23:31]       |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[2024-08-15 14:23:31] /build/rdk/telemetry/src/main/main.c:67:23: note: each undeclared identifier is reported only once for each function it appears in
+[2024-08-15 14:23:31] /build/rdk/telemetry/src/main/main.c:89:15: error: incompatible types when assigning to type 'int' from type 'telemetry_collector_t*'
+[2024-08-15 14:23:31]   89 |         collector = telemetry_collector_create();
+[2024-08-15 14:23:31]       |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~
+[2024-08-15 14:23:31] /build/rdk/telemetry/src/main/main.c:89:15: note: expected 'int' but argument is of type 'telemetry_collector_t*'
+[2024-08-15 14:23:31] make[2]: *** [src/main/CMakeFiles/telemetry_main.dir/build.make:63: src/main/CMakeFiles/telemetry_main.dir/main.c.o] Error 1
+[2024-08-15 14:23:31] make[1]: *** [CMakeFiles/Makefile2:378: src/main/CMakeFiles/telemetry_main.dir/all] Error 2
+[2024-08-15 14:23:31] ERROR: Compilation failed for telemetry_main
+
+[2024-08-15 14:23:32] Build summary:
+[2024-08-15 14:23:32] ========================================
+[2024-08-15 14:23:32] Total targets: 6
+[2024-08-15 14:23:32] Successful: 2 (telemetry_common, telemetry_processor)
+[2024-08-15 14:23:32] Failed: 4
+[2024-08-15 14:23:32]   - telemetry_collector: Compilation errors (3 errors)
+[2024-08-15 14:23:32]   - telemetry_api: Linking error (missing json-c library)
+[2024-08-15 14:23:32]   - telemetry_tests: Linking error (undefined references)
+[2024-08-15 14:23:32]   - telemetry_main: Compilation errors (3 errors)
+[2024-08-15 14:23:32] ========================================
+
+[2024-08-15 14:23:33] Error breakdown:
+[2024-08-15 14:23:33] CMakeError: 0
+[2024-08-15 14:23:33] CompilationError: 6
+[2024-08-15 14:23:33] LinkerError: 2
+[2024-08-15 14:23:33] UndefinedReference: 3
+[2024-08-15 14:23:33] MissingLibrary: 1
+[2024-08-15 14:23:33] TypeMismatch: 1
+[2024-08-15 14:23:33] MissingInclude: 1
+
+[2024-08-15 14:23:34] Attempting to run tests on successfully built components...
+[2024-08-15 14:23:34] Running tests for telemetry_common...
+[2024-08-15 14:23:35] [PASS] test_utils_basic
+[2024-08-15 14:23:35] [PASS] test_logger_init
+[2024-08-15 14:23:35] [PASS] test_config_defaults
+[2024-08-15 14:23:36] [FAIL] test_memory_allocation
+[2024-08-15 14:23:36]   Assertion failed: expected 1024, got 0
+[2024-08-15 14:23:36]   Location: tests/test_utils.c:142
+[2024-08-15 14:23:36] [PASS] test_memory_cleanup
+[2024-08-15 14:23:36] Tests completed: 4 passed, 1 failed
+
+[2024-08-15 14:23:37] Running tests for telemetry_processor...
+[2024-08-15 14:23:37] [PASS] test_filter_basic
+[2024-08-15 14:23:37] [PASS] test_aggregator_sum
+[2024-08-15 14:23:37] [PASS] test_aggregator_avg
+[2024-08-15 14:23:38] Tests completed: 3 passed, 0 failed
+
+[2024-08-15 14:23:39] Final build status: FAILED
+[2024-08-15 14:23:39] Build time: 27 seconds
+[2024-08-15 14:23:39] ========================================
+[2024-08-15 14:23:39] 
+[2024-08-15 14:23:39] RECOMMENDED ACTIONS:
+[2024-08-15 14:23:39] 1. Fix missing type definitions in collector.h (telemetry_config_t)
+[2024-08-15 14:23:39] 2. Add missing #include <getopt.h> in main.c
+[2024-08-15 14:23:39] 3. Install json-c development package: apt-get install libjson-c-dev
+[2024-08-15 14:23:39] 4. Link telemetry_common library to telemetry_collector
+[2024-08-15 14:23:39] 5. Fix undefined references in collector.c (telemetry_config_load, telemetry_malloc, telemetry_free)
+[2024-08-15 14:23:39] 6. Fix type mismatch in main.c line 89 (collector assignment)
+[2024-08-15 14:23:39] 7. Define missing constants: TELEMETRY_MAX_SAMPLES, TELEMETRY_DEFAULT_CONFIG_PATH
+[2024-08-15 14:23:39] 
+[2024-08-15 14:23:39] For detailed error analysis, see error log above.
+[2024-08-15 14:23:39] Build terminated with errors.
+

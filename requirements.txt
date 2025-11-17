@@ -1,0 +1,27 @@
+# Requirements for Practical AI for DevSecOps Course
+# Install with: pip install -r requirements.txt
+# Or in virtual environment: python -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt
+
+# LLM API clients
+openai>=1.0.0          # For OpenAI API (GPT-4, GPT-3.5-turbo)
+anthropic>=0.18.0      # For Anthropic API (Claude)
+requests>=2.31.0       # For Ollama API and general HTTP requests
+
+# Data analysis (for Part 5: Metrics & Reporting)
+pandas>=2.0.0          # For data manipulation and analysis
+python-dateutil>=2.8.0 # For date parsing (pandas dependency)
+
+# Optional: For enhanced JSON handling
+# json5>=0.9.0         # More flexible JSON parsing (optional)
+
+# Optional: For better terminal output formatting
+# rich>=13.0.0         # Pretty terminal output (optional)
+
+# Note: Standard library modules used (no install needed):
+# - json
+# - re
+# - sys
+# - pathlib
+# - collections
+# - datetime
+

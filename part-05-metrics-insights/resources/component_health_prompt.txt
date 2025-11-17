@@ -1,0 +1,53 @@
+# Component Health Analysis Prompt Template
+# Use this with Copilot Chat or LLM API
+
+Analyze component health from the following data:
+
+Components and their metrics:
+{component_data}
+
+For each component, provide:
+1. Health score (0-100)
+   - Calculate based on: issue count, resolution time, build failures, security issues
+   - Formula: Start at 100, subtract points for each issue
+   - Issue count: -5 per issue (max -50)
+   - Resolution time: -1 per day over 3 days (max -20)
+   - Build failures: -10 per failure (max -20)
+   - Security issues: -15 per issue (max -30)
+
+2. Health status (Healthy/At Risk/Unhealthy)
+   - Healthy: Score 80-100
+   - At Risk: Score 50-79
+   - Unhealthy: Score 0-49
+
+3. Top 3 concerns
+   - List the most critical issues affecting this component
+
+4. Recommended actions
+   - Specific, actionable steps to improve health
+
+Format as a dashboard-ready summary with:
+- Component name
+- Health score and status
+- Key metrics (issues, resolution time, failures)
+- Concerns and actions
+
+Example output format:
+```
+Component: telemetry
+Health Score: 65/100 (At Risk)
+Metrics:
+  - Issues: 8
+  - Avg resolution: 5 days
+  - Build failures: 2
+  - Security issues: 1
+Top Concerns:
+  1. High issue count (8 issues in 30 days)
+  2. Slow resolution time (5 days average)
+  3. Security vulnerability present
+Recommended Actions:
+  1. Prioritize security fix (P0)
+  2. Reduce resolution time target to 3 days
+  3. Review component architecture for stability
+```
+

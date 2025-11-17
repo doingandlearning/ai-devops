@@ -1,0 +1,31 @@
+{
+  "metadata": {
+    "source_file": "wifi_hal.c",
+    "bd_report": "bd-report.txt",
+    "extracted_sections": 1,
+    "confidence": "medium",
+    "review_required": true
+  },
+  "notice_additions": [
+    "Adapted from ieee80211...",
+    "Copyright { YEAR } Sam Leffler. Licensed under the BSD-3 License.",
+    "Adapted from iw which is: Copyright (c) 2007, 2008 Johannes Berg, Copyright (c) 2007 Andy Lutomirski, Copyright (c) 2007 Mike Kershaw, Copyright (c) 2008-2009 Luis R. Rodriguez. Licensed under the ISC License."
+  ],
+  "license_additions": [
+    "The component is licensed to you under the Apache License, Version 2.0.",
+    "BSD-3 License",
+    "ISC License"
+  ],
+  "evidence": [
+    {
+      "file": "wifi_hal.c",
+      "lines": [
+        63,
+        92
+      ],
+      "why": "The code includes references to ieee80211 and iw adaptations, indicating the need for BSD-3 and ISC License notices."
+    }
+  ],
+  "confidence": "medium",
+  "review_required": true
+}

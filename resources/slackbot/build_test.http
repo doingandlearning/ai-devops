@@ -1,0 +1,31 @@
+### Build Failure Notification Test
+POST http://localhost:8000/build/failure
+Content-Type: application/json
+
+{
+  "log": "Build started at 2024-11-06 13:30:00\nCompiling telemetry/collector.c...\nIn file included from collector.c:46:\ncollector.h:46:5: error: unknown type name 'telemetry_config_t'\n   46 |     telemetry_config_t *config;\n      |     ^~~~~~~~~~~~~~~~~~\ncollector.c:73:15: error: 'telemetry_config_t' undeclared (first use in this function)\n   73 |     telemetry_config_t *cfg = telemetry_config_load();\n      |               ^~~~~~~~~~~~~~~~~\ncollector.c:73:15: note: each undeclared identifier is reported only once\ncollector.c:73:42: error: implicit declaration of function 'telemetry_config_load'\n   73 |     telemetry_config_t *cfg = telemetry_config_load();\n      |                                          ^~~~~~~~~~~~~~~~~~~~~~\ncollector.c:89:5: error: 'telemetry_config_t' has no member named 'enabled'\n   89 |     if (cfg->enabled) {\n      |         ^~\ncollector.c:95:5: error: 'telemetry_config_t' has no member named 'endpoint'\n   95 |         strcpy(endpoint, cfg->endpoint);\n      |         ^~\ncollector.c:102:3: error: implicit declaration of function 'telemetry_free'\n  102 |     telemetry_free(cfg);\n      |     ^~~~~~~~~~~~~\ncollector.c:102:3: error: incompatible implicit declaration of built-in function 'telemetry_free'\ncollector.c:102:3: note: include '<stdlib.h>' or provide a declaration of 'telemetry_free'\ncollector.c: In function 'main':\ncollector.c:120:5: error: implicit declaration of function 'telemetry_malloc'\n  120 |     char *buffer = telemetry_malloc(1024);\n      |     ^~~~~~~~~~~~~\ncollector.c:120:5: error: incompatible implicit declaration of built-in function 'telemetry_malloc'\ncollector.c:120:5: note: include '<stdlib.h>' or provide a declaration of 'telemetry_malloc'\ncollector.c: At top level:\ncollector.c:125:1: error: conflicting types for 'telemetry_malloc'\n  125 | void* telemetry_malloc(size_t size) {\n      | ^~~~\ncollector.c:120:5: note: previous implicit declaration was here\n  120 |     char *buffer = telemetry_malloc(1024);\n      |     ^~~~~~~~~~~~~\ncollector.c:125:1: error: conflicting types for 'telemetry_malloc'\n  125 | void* telemetry_malloc(size_t size) {\n      | ^~~~\ncollector.c:120:5: note: previous implicit declaration was here\n  120 |     char *buffer = telemetry_malloc(1024);\n      |     ^~~~~~~~~~~~~\ncollector.c:130:1: error: conflicting types for 'telemetry_free'\n  130 | void telemetry_free(void* ptr) {\n      | ^~~~\ncollector.c:102:3: note: previous implicit declaration was here\n  102 |     telemetry_free(cfg);\n      |     ^~~~~~~~~~~~~\ncollector.c:130:1: error: conflicting types for 'telemetry_free'\n  130 | void telemetry_free(void* ptr) {\n      |     ^~~~\ncollector.c:102:3: note: previous implicit declaration was here\n  102 |     telemetry_free(cfg);\n      |     ^~~~~~~~~~~~~\nLinking telemetry/collector...\n/usr/bin/ld: cannot find -ljson-c\n/usr/bin/ld: cannot find -ljson-c\ncollector.o: In function `telemetry_config_load':\ncollector.c:(.text+0x45): undefined reference to `json_object_get'\ncollector.c:(.text+0x67): undefined reference to `json_object_get_string'\ncollector.c:(.text+0x89): undefined reference to `json_object_get_boolean'\ncollector.c:(.text+0xa1): undefined reference to `json_object_put'\ncollector.o: In function `main':\ncollector.c:(.text+0x120): undefined reference to `json_object_new_object'\ncollector.c:(.text+0x145): undefined reference to `json_object_to_json_string'\ncollector.c:(.text+0x167): undefined reference to `json_object_put'\nBuild failed with 18 errors\n",
+  "repo": "rdk/telemetry",
+  "branch": "main",
+  "commit": "abc123def456",
+  "build_url": "https://jenkins.example.com/build/123"
+}
+
+###
+
+### Build Failure Notification Test (Minimal)
+POST http://localhost:8000/build/failure
+Content-Type: application/json
+
+{
+  "log": "error: unknown type name 'telemetry_config_t'\n/usr/bin/ld: cannot find -ljson-c\nundefined reference to 'json_object_get'",
+  "repo": "rdk/telemetry",
+  "branch": "main"
+}
+
+###
+
+### Health Check
+GET http://localhost:8000/healthz
+
+###
+

@@ -1,0 +1,18 @@
+{
+  "source_file": "wifi_hal.c",
+  "bd_report": "bd-report.txt",
+  "sections": [
+    {
+      "reference": {
+        "file": "wifi_hal.c",
+        "line": 72,
+        "type": "exact",
+        "context": "       67: #define MAX_BUF_SIZE 128\n       68: #define MAX_CMD_SIZE 1024\n       69: #define MAX_POSSIBLE_CHANNEL_STRING_BUF 512\n       70: #define IF_NAME_SIZE 50\n       71: #define CONFIG_PREFIX \"/nvram/hostapd\"\n>>>    72: #define ACL_PREFIX \"/tmp/hostapd-acl\"\n       73: //#define ACL_PREFIX \"/tmp/wifi_acl_list\" //RDKB convention\n       74: #define SOCK_PREFIX \"/var/run/hostapd/wifi\"\n       75: #define VAP_STATUS_FILE \"/tmp/vap-status\"\n       76: #define DRIVER_2GHZ \"ath9k\"\n       77: #define DRIVER_5GHZ \"ath10k_pci\"\n       78: \n       79: /*\n       80:    MAX_APS - Number of all AP available in system\n       81:    2x Home AP\n       82:    2x Backhaul AP\n"
+      },
+      "start_line": 63,
+      "end_line": 92,
+      "code": "#include <errno.h>\n#include <time.h>\n#define MAC_ALEN 6\n\n#define MAX_BUF_SIZE 128\n#define MAX_CMD_SIZE 1024\n#define MAX_POSSIBLE_CHANNEL_STRING_BUF 512\n#define IF_NAME_SIZE 50\n#define CONFIG_PREFIX \"/nvram/hostapd\"\n#define ACL_PREFIX \"/tmp/hostapd-acl\"\n//#define ACL_PREFIX \"/tmp/wifi_acl_list\" //RDKB convention\n#define SOCK_PREFIX \"/var/run/hostapd/wifi\"\n#define VAP_STATUS_FILE \"/tmp/vap-status\"\n#define DRIVER_2GHZ \"ath9k\"\n#define DRIVER_5GHZ \"ath10k_pci\"\n\n/*\n   MAX_APS - Number of all AP available in system\n   2x Home AP\n   2x Backhaul AP\n   2x Guest AP\n   2x Secure Onboard AP\n   2x Service AP\n\n*/\n#define MAX_APS 10\n#define NUMBER_OF_RADIOS 2\n\n#ifndef AP_PREFIX\n#define AP_PREFIX\t\"wifi\"\n",
+      "context": "       67: #define MAX_BUF_SIZE 128\n       68: #define MAX_CMD_SIZE 1024\n       69: #define MAX_POSSIBLE_CHANNEL_STRING_BUF 512\n       70: #define IF_NAME_SIZE 50\n       71: #define CONFIG_PREFIX \"/nvram/hostapd\"\n>>>    72: #define ACL_PREFIX \"/tmp/hostapd-acl\"\n       73: //#define ACL_PREFIX \"/tmp/wifi_acl_list\" //RDKB convention\n       74: #define SOCK_PREFIX \"/var/run/hostapd/wifi\"\n       75: #define VAP_STATUS_FILE \"/tmp/vap-status\"\n       76: #define DRIVER_2GHZ \"ath9k\"\n       77: #define DRIVER_5GHZ \"ath10k_pci\"\n       78: \n       79: /*\n       80:    MAX_APS - Number of all AP available in system\n       81:    2x Home AP\n       82:    2x Backhaul AP\n"
+    }
+  ]
+}

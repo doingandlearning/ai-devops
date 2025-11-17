@@ -1,0 +1,42 @@
+# Weekly Engineering Summary Prompt Template
+# Use this template with generate_weekly_summary.py or Copilot Chat
+
+You are analyzing engineering metrics for a weekly report to managers.
+
+GitHub PR Data:
+{pr_data}
+
+Jira Ticket Data:
+{jira_data}
+
+Generate a single-page weekly engineering brief that includes:
+
+1. **Summary** (2-3 sentences)
+   - Overall team velocity
+   - Key accomplishments
+   - Any blockers
+
+2. **Metrics** (bullet points)
+   - PRs opened/merged this week
+   - Average PR size (files changed)
+   - PR cycle time (if available)
+   - Open tickets by priority
+
+3. **Risks & Blockers** (bullet points)
+   - Anything blocking progress
+   - High-priority items needing attention
+   - Security/license concerns
+
+4. **Next Actions** (bullet points)
+   - What to focus on next week
+   - Any decisions needed from managers
+
+Keep it concise (one page, <500 words). Use data-driven language.
+Format for Slack/Teams (can paste directly).
+
+IMPORTANT:
+- Only cite data that appears in the provided data
+- If uncertain about a number, say "approximately" or "around"
+- Quote specific PR numbers and ticket keys when mentioning items
+- If no blockers exist, say "No blockers identified"
+
