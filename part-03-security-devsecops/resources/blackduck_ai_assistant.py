@@ -234,11 +234,13 @@ Rules:
 - Use RDK standard phrasing ("The component is licensed to you under the Apache License, Version 2.0...").
 - Don't invent years/names; use placeholders if uncertain: {{ YEAR }}, {{ COPYRIGHT HOLDER }}.
 
-CODE SECTIONS:
+<code_block>
 {code_block}
+</code_block>
 
-BLACK DUCK REPORT NOTES:
+<black_duck_summary>
 {bd_summary}
+</black_duck_summary>
 """
         return prompt
     
