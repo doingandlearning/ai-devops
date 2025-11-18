@@ -9,7 +9,7 @@ from flask import Blueprint, Response, current_app, request
 
 from .config import AppSettings
 from .github import extract_pr_info, fetch_pr_file_summaries
-from .llm import summarize_pull_request
+from .llm import summarize_pull_request, send_message_to_llm
 from .slack_client import SlackMessenger
 from .build_analysis import analyze_build_log
 
@@ -317,6 +317,43 @@ def build_failure() -> Response:
 			
 	except Exception as e:
 		logger.error(f"Error processing build failure: {e}", exc_info=True)
+		return Response(
+			json.dumps({"ok": False, "error": str(e)}),
+			status=500,
+			mimetype="application/json"
+		)
+
+
+@bp.post("/llm/chat")
+def llm_chat() -> Response:
+	"""Handle LLM chat messages."""
+	try:
+		# Get message from request
+		payload: Dict[str, Any] = request.get_json(force=True, silent=True) or {}
+		
+		message = payload.get("message", "")
+		if not message:
+			return Response(
+				json.dumps({"ok": False, "error": "No message provided"}),
+				status=400,
+				mimetype="application/json"
+			)
+		
+		logger.info(f"Sending message to LLM: {message[:100]}...")
+		
+		# Send to LLM and get response
+		response = send_message_to_llm(message)
+		
+		logger.info(f"Received LLM response: {response[:100]}...")
+		
+		return Response(
+			json.dumps({"ok": True, "response": response}),
+			status=200,
+			mimetype="application/json"
+		)
+		
+	except Exception as e:
+		logger.error(f"Error processing LLM chat: {e}", exc_info=True)
 		return Response(
 			json.dumps({"ok": False, "error": str(e)}),
 			status=500,

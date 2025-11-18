@@ -72,6 +72,7 @@ def call_openai(prompt, model='gpt-4'):
             {"role": "user", "content": prompt}
         ],
         "temperature": 0.3,  # Lower temperature for more consistent output
+        "max_tokens": 700
     }
     
     # Add response_format only for supported models

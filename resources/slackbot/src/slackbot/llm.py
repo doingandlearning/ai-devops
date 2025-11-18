@@ -43,3 +43,23 @@ def summarize_pull_request(pr: PullRequestInfo, files_text: str) -> str:
 
 	# Fallback for unexpected shapes
 	return "PR Summary unavailable."
+
+
+def send_message_to_llm(message: str) -> str:
+	"""Send a message to the LLM and return the response."""
+	settings = AppSettings()
+	client = OpenAI(api_key=settings.openai_api_key.get_secret_value())
+
+	resp = client.chat.completions.create(
+		model=settings.openai_model,
+		messages=[{"role": "user", "content": message}],
+	)
+
+	# Extract the text response
+	if resp.choices and len(resp.choices) > 0:
+		message_obj = resp.choices[0].message
+		if message_obj and message_obj.content:
+			return message_obj.content.strip()
+
+	# Fallback for unexpected shapes
+	return "No response from LLM."

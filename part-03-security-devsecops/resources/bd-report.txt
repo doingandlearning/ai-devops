@@ -1,4 +1,7 @@
-[BD-1290] Compliance Issues in rdkb/devices/test/hal Created: 18/Mar/25  Updated: 29/Aug/25  Resolved: 29/Aug/25
+[BD-1290] Compliance Issues in rdkb/devices/test/hal 
+Created: 18/Mar/25  
+Updated: 29/Aug/25  
+Resolved: 29/Aug/25
 Status:
 Resolved
 Project:
