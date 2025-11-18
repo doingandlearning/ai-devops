@@ -86,3 +86,4 @@ zip -r ai-devops-participant-materials.zip ai-devops-participant-materials \
 
 **Ready to share!** 🚀
 
+
