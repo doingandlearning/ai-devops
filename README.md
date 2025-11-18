@@ -2,15 +2,6 @@
 
 **Welcome!** This directory contains all the materials you'll need for today's course.
 
-## Course Structure
-
-- **Part 1:** Demystifying AI (30 min)
-- **Part 2:** AI Tools Landscape & Lab 1 (1 hour)
-- **Part 3:** Security, Licensing & Governance (1 hour)
-- **Part 4:** GitHub & AI in Practice (45 min)
-- **Part 5:** Metrics, Insights & Reporting (45 min)
-- **Part 6:** Reflection & Planning (45 min)
-
 ## Quick Start
 
 ### 1. Set Up Environment
@@ -33,16 +24,19 @@ chmod +x setup_venv.sh
 You'll need access to an LLM for the labs. Choose one:
 
 **Option A: OpenAI**
+
 ```bash
 export OPENAI_API_KEY="your-key-here"
 ```
 
 **Option B: Anthropic**
+
 ```bash
 export ANTHROPIC_API_KEY="your-key-here"
 ```
 
 **Option C: Ollama (Local)**
+
 ```bash
 # Install Ollama from https://ollama.ai
 ollama serve  # Run in another terminal
@@ -98,18 +92,22 @@ participant-materials/
 ### Lab Scripts
 
 **Lab 1 - Log Triage:**
+
 - `part-02-ai-tools-landscape/labs/lab-1-log-triage/` - Your lab directory
 - `resources/lab-1-solutions/` - Solution scripts (reference only)
 
 **Lab 3 - Black Duck:**
+
 - `part-03-security-devsecops/resources/blackduck_ai_assistant.py`
 
 **Lab 4 - Metrics:**
+
 - `part-05-metrics-insights/resources/pull_github_data.py`
 - `part-05-metrics-insights/resources/pull_jira_data.py`
 - `part-05-metrics-insights/resources/generate_weekly_summary.py`
 
 **Slackbot Example:**
+
 - `resources/slackbot/` - Working Slackbot (Lab 1 output in production)
 
 ### Slides
@@ -135,6 +133,7 @@ participant-materials/
 ## Course Objectives
 
 By the end of the day, you will:
+
 - ✅ Understand where AI fits into DevSecOps workflows
 - ✅ Have hands-on experience with log triage (Lab 1)
 - ✅ Know how to use AI for copyright attribution (Part 3)
